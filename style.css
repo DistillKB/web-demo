@@ -3,22 +3,30 @@
     margin: 0;
     overflow: hidden;
 }
+
 h3 {
     font-family: Helvetica;
     color: white;
     font-size: 12px;
     font-weight: 400;
 }
+
 body {
+    display: grid;
+    grid-template-rows: auto 1fr;
     background-image: linear-gradient(to right, #349c9e, white);
     background-repeat: no-repeat;
     background-size: 100%, 100%;
-} 
+    height: 100vh;
+    margin: 0;
+}
+
 .parentnav {
     display: flex;
     width: 100%;
     justify-content: center;
 }
+
 nav {
     border-bottom: 5px solid white;
     background-color: #158c76;
@@ -27,13 +35,14 @@ nav {
     justify-content: center;
     margin: 0;
 }
+
 .navitems {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     font-size: 20px;
     font-family: Helvetica;
@@ -48,7 +57,55 @@ nav a{
     padding: 5px;
 }
 
-/* New styles for weather display */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.dataplacehold {
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(45deg, white, mediumpurple);
+    width: 300px;
+    height: 300px;
+    border-radius: 15px 50px 30px 5px;
+    margin: 10px;
+    border: 5px solid mediumpurple;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    animation: fadeIn 3s;
+    animation-name: fadeIn;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dataplacehold h1 {
+    font-family: Helvetica;
+    font-size: 100%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.dataplacehold:hover {
+    transform: translateY(-10px);
+}
+
+/* Weather display styles */
 .weather-container {
     padding: 20px;
     max-width: 600px;
@@ -102,4 +159,20 @@ nav a{
     color: red;
     padding: 10px;
     display: none;
+}
+
+/* Media Queries */
+@media (max-width: 566px) {
+    .dataplacehold h1 {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 462px) {
+    .dataplacehold h1 {
+        font-size: 60%;
+    }
+    .dataplacehold {
+        height: 200px;
+    }
 }
