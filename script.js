@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hideError();
         weatherInfo.style.display = 'none';
 
-        fetch(`http://fi7.bot-hosting.net:22374/weather?city=${encodeURIComponent(city)}`)
+        fetch(`https://fi7.bot-hosting.net:22374/weather?city=${encodeURIComponent(city)}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
